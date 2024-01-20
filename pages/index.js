@@ -11,18 +11,48 @@ export default function Home() {
             <section className={utilStyle.headingMd}>
                 <p>私はスタートアップ企業でエンジニアをしています</p>
             </section>
-            <section>
+			<section className={`${utilStyle.headingMd} ${utilStyle.padding1px}`}>
                 <h2>Next.jsの学習用blogです</h2>
-                <div>
+                <div className={styles.grid}>
                     <article>
                         <Link href="/">
-                            <img src="images/thumbnail01.jpg"></img>
+                            <img src="images/thumbnail01.jpg" className={styles.thumbnailImage}></img>
                         </Link>
                         <Link href="/">
-                            <a>Next.jsとは？</a>
+                            <a className={utilStyle.boldText}>Next.jsとは？</a>
                         </Link>
                         <br />
-                        <small>January 16, 2024</small>
+                        <small className={utilStyle.lightText}>January 16, 2024</small>
+                    </article>
+					<article>
+                        <Link href="/">
+                            <img src="images/thumbnail01.jpg" className={styles.thumbnailImage}></img>
+                        </Link>
+                        <Link href="/">
+                            <a className={utilStyle.boldText}>Next.jsとは？</a>
+                        </Link>
+                        <br />
+                        <small className={utilStyle.lightText}>January 16, 2024</small>
+                    </article>
+					<article>
+                        <Link href="/">
+                            <img src="images/thumbnail01.jpg" className={styles.thumbnailImage}></img>
+                        </Link>
+                        <Link href="/">
+                            <a className={utilStyle.boldText}>Next.jsとは？</a>
+                        </Link>
+                        <br />
+                        <small className={utilStyle.lightText}>January 16, 2024</small>
+                    </article>
+					<article>
+                        <Link href="/">
+                            <img src="images/thumbnail01.jpg" className={styles.thumbnailImage}></img>
+                        </Link>
+                        <Link href="/">
+                            <a className={utilStyle.boldText}>Next.jsとは？</a>
+                        </Link>
+                        <br />
+                        <small className={utilStyle.lightText}>January 16, 2024</small>
                     </article>
                 </div>
             </section>
