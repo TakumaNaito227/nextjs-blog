@@ -4,55 +4,89 @@ import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import Layout from '../components/layout'
 import utilStyle from '../styles/utils.module.css'
+import { getPostsData } from '../lib/post'
 
-export default function Home() {
+// SSGの場合
+export async function getStaticProps() {
+    const allPostsData = getPostsData()
+    console.log(allPostsData)
+    return {
+        props: {
+            allPostsData,
+        },
+    }
+}
+
+export default function Home({ allPostsData }) {
     return (
         <Layout>
             <section className={utilStyle.headingMd}>
                 <p>私はスタートアップ企業でエンジニアをしています</p>
             </section>
-			<section className={`${utilStyle.headingMd} ${utilStyle.padding1px}`}>
+            <section
+                className={`${utilStyle.headingMd} ${utilStyle.padding1px}`}
+            >
                 <h2>Next.jsの学習用blogです</h2>
                 <div className={styles.grid}>
                     <article>
                         <Link href="/">
-                            <img src="images/thumbnail01.jpg" className={styles.thumbnailImage}></img>
+                            <img
+                                src="images/thumbnail01.jpg"
+                                className={styles.thumbnailImage}
+                            ></img>
                         </Link>
                         <Link href="/">
                             <a className={utilStyle.boldText}>Next.jsとは？</a>
                         </Link>
                         <br />
-                        <small className={utilStyle.lightText}>January 16, 2024</small>
+                        <small className={utilStyle.lightText}>
+                            January 16, 2024
+                        </small>
                     </article>
-					<article>
+                    <article>
                         <Link href="/">
-                            <img src="images/thumbnail01.jpg" className={styles.thumbnailImage}></img>
+                            <img
+                                src="images/thumbnail01.jpg"
+                                className={styles.thumbnailImage}
+                            ></img>
                         </Link>
                         <Link href="/">
                             <a className={utilStyle.boldText}>Next.jsとは？</a>
                         </Link>
                         <br />
-                        <small className={utilStyle.lightText}>January 16, 2024</small>
+                        <small className={utilStyle.lightText}>
+                            January 16, 2024
+                        </small>
                     </article>
-					<article>
+                    <article>
                         <Link href="/">
-                            <img src="images/thumbnail01.jpg" className={styles.thumbnailImage}></img>
+                            <img
+                                src="images/thumbnail01.jpg"
+                                className={styles.thumbnailImage}
+                            ></img>
                         </Link>
                         <Link href="/">
                             <a className={utilStyle.boldText}>Next.jsとは？</a>
                         </Link>
                         <br />
-                        <small className={utilStyle.lightText}>January 16, 2024</small>
+                        <small className={utilStyle.lightText}>
+                            January 16, 2024
+                        </small>
                     </article>
-					<article>
+                    <article>
                         <Link href="/">
-                            <img src="images/thumbnail01.jpg" className={styles.thumbnailImage}></img>
+                            <img
+                                src="images/thumbnail01.jpg"
+                                className={styles.thumbnailImage}
+                            ></img>
                         </Link>
                         <Link href="/">
                             <a className={utilStyle.boldText}>Next.jsとは？</a>
                         </Link>
                         <br />
-                        <small className={utilStyle.lightText}>January 16, 2024</small>
+                        <small className={utilStyle.lightText}>
+                            January 16, 2024
+                        </small>
                     </article>
                 </div>
             </section>
