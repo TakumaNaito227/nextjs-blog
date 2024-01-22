@@ -28,66 +28,21 @@ export default function Home({ allPostsData }) {
             >
                 <h2>Next.jsの学習用blogです</h2>
                 <div className={styles.grid}>
-                    <article>
-                        <Link href="/">
-                            <img
-                                src="images/thumbnail01.jpg"
-                                className={styles.thumbnailImage}
+					{allPostsData.map(({ id, date, title, thumbnail }) => (
+                    <article key={id}>
+                        <Link href={`/posts/${id}`}>
+                            <img src={`${thumbnail}`} className={styles.thumbnailImage}
                             ></img>
                         </Link>
-                        <Link href="/">
-                            <a className={utilStyle.boldText}>Next.jsとは？</a>
+                        <Link href={`/posts/${id}`}>
+                            <a className={utilStyle.boldText}>{title}</a>
                         </Link>
                         <br />
                         <small className={utilStyle.lightText}>
-                            January 16, 2024
+                            {date}
                         </small>
                     </article>
-                    <article>
-                        <Link href="/">
-                            <img
-                                src="images/thumbnail01.jpg"
-                                className={styles.thumbnailImage}
-                            ></img>
-                        </Link>
-                        <Link href="/">
-                            <a className={utilStyle.boldText}>Next.jsとは？</a>
-                        </Link>
-                        <br />
-                        <small className={utilStyle.lightText}>
-                            January 16, 2024
-                        </small>
-                    </article>
-                    <article>
-                        <Link href="/">
-                            <img
-                                src="images/thumbnail01.jpg"
-                                className={styles.thumbnailImage}
-                            ></img>
-                        </Link>
-                        <Link href="/">
-                            <a className={utilStyle.boldText}>Next.jsとは？</a>
-                        </Link>
-                        <br />
-                        <small className={utilStyle.lightText}>
-                            January 16, 2024
-                        </small>
-                    </article>
-                    <article>
-                        <Link href="/">
-                            <img
-                                src="images/thumbnail01.jpg"
-                                className={styles.thumbnailImage}
-                            ></img>
-                        </Link>
-                        <Link href="/">
-                            <a className={utilStyle.boldText}>Next.jsとは？</a>
-                        </Link>
-                        <br />
-                        <small className={utilStyle.lightText}>
-                            January 16, 2024
-                        </small>
-                    </article>
+					))}
                 </div>
             </section>
         </Layout>
