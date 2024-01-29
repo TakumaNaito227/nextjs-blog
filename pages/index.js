@@ -2,14 +2,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
-import Layout from '../components/layout'
+import Layout, { siteTitle } from '../components/layout'
 import utilStyle from '../styles/utils.module.css'
 import { getPostsData } from '../lib/post'
 
 // SSGの場合
 export async function getStaticProps() {
     const allPostsData = getPostsData()
-    console.log(allPostsData)
     return {
         props: {
             allPostsData,
@@ -19,7 +18,8 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }) {
     return (
-        <Layout>
+        <Layout home>
+			<Head><title>{siteTitle}</title></Head>
             <section className={utilStyle.headingMd}>
                 <p>私はスタートアップ企業でエンジニアをしています</p>
             </section>
