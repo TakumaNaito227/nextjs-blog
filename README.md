@@ -3,7 +3,7 @@ next.js blog
 
 
 # 概要
-next.jsの学習用アプリ
+next.jsの基礎学習用アプリ
 プリレンダリング(SSG)実装
 
 # 動作確認
@@ -15,5 +15,3 @@ https://nextjs-blog-hsd3.vercel.app/
 - JavaSciript
 - Next.js
 - vercel
-
-
